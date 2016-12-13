@@ -4,6 +4,7 @@ import commands.HelpCommand;
 import commands.HorarisCommand;
 import commands.StartCommand;
 import config.BotConfig;
+import services.dataVars;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.objects.CallbackQuery;
@@ -80,22 +81,22 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                 case "Grups":
                     markup.setKeyboard(menus.MenuInlineButtonsHorariGrups());
                     enviarResposta(answer, markup, "Tria el grup:");break;
-                case "Dilluns": enviarResposta(answerPhoto, BotConfig.HPDilluns); break;
-                case "Dimarts": enviarResposta(answerPhoto, BotConfig.HPDimarts); break;
-                case "Dimecres":    enviarResposta(answerPhoto, BotConfig.HPDimecres); break;
-                case "Dijous":  enviarResposta(answerPhoto, BotConfig.HPDijous); break;
-                case "Divendres":   enviarResposta(answerPhoto, BotConfig.HPDivendres); break;
-                case "SMX1A" :  enviarResposta(answerPhoto,BotConfig.HSMX1A); break;
-                case "SMX1B":   enviarResposta(answerPhoto,BotConfig.HSMX1B); break;
-                case "SMC1C":   enviarResposta(answerPhoto,BotConfig.HSMX1C); break;
-                case "SMX2A":   enviarResposta(answerPhoto,BotConfig.HSMX2A); break;
-                case "SMX2B":   enviarResposta(answerPhoto,BotConfig.HSMX2B); break;
-                case "SMX2C":   enviarResposta(answerPhoto,BotConfig.HSMX2C); break;
-                case "GS1B":    enviarResposta(answerPhoto,BotConfig.HGS1B); break;
-                case "GS1A":    enviarResposta(answerPhoto,BotConfig.HGS1A); break;
-                case "ASIX2":   enviarResposta(answerPhoto,BotConfig.HASIX2A); break;
-                case "DAM2A":   enviarResposta(answerPhoto,BotConfig.HDAM2A); break;
-                case "DAM2B":   enviarResposta(answerPhoto,BotConfig.HDAM2B); break;
+                case "Dilluns": enviarResposta(answerPhoto, dataVars.HPDilluns); break;
+                case "Dimarts": enviarResposta(answerPhoto, dataVars.HPDimarts); break;
+                case "Dimecres":    enviarResposta(answerPhoto, dataVars.HPDimecres); break;
+                case "Dijous":  enviarResposta(answerPhoto, dataVars.HPDijous); break;
+                case "Divendres":   enviarResposta(answerPhoto, dataVars.HPDivendres); break;
+                case "SMX1A" :  enviarResposta(answerPhoto,dataVars.HSMX1A); break;
+                case "SMX1B":   enviarResposta(answerPhoto,dataVars.HSMX1B); break;
+                case "SMC1C":   enviarResposta(answerPhoto,dataVars.HSMX1C); break;
+                case "SMX2A":   enviarResposta(answerPhoto,dataVars.HSMX2A); break;
+                case "SMX2B":   enviarResposta(answerPhoto,dataVars.HSMX2B); break;
+                case "SMX2C":   enviarResposta(answerPhoto,dataVars.HSMX2C); break;
+                case "GS1B":    enviarResposta(answerPhoto,dataVars.HGS1B); break;
+                case "GS1A":    enviarResposta(answerPhoto,dataVars.HGS1A); break;
+                case "ASIX2":   enviarResposta(answerPhoto,dataVars.HASIX2A); break;
+                case "DAM2A":   enviarResposta(answerPhoto,dataVars.HDAM2A); break;
+                case "DAM2B":   enviarResposta(answerPhoto,dataVars.HDAM2B); break;
             }
 
         }
