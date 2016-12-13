@@ -12,4 +12,4 @@
 hs_err_pid*
 
 # token i user bot
-src/config/BotConfig
+src/config/BotConfig.java
