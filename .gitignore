@@ -1,4 +1,5 @@
 *.class
+*.log
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -13,3 +14,8 @@ hs_err_pid*
 
 # token i user bot
 src/config/BotConfig.java
+
+# fitxer idea
+.idea/
+lib/
+out/
