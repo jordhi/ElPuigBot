@@ -4,6 +4,7 @@ import commands.HelpCommand;
 import commands.HorarisCommand;
 import commands.StartCommand;
 import config.BotConfig;
+import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import services.dataVars;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
@@ -72,15 +73,17 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
             answerPhoto.setChatId(callbackQuery.getMessage().getChatId());
 
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+            InlineKeyboardMarkup markup2 = null;
+
 
             switch (tria) {
                 case "Professors":
                     markup.setKeyboard(menus.MenuInlineButtonsHorarisProfes());
-                    enviarResposta(answer, markup, "Tria els horaris de:");
+                    enviarResposta(callbackQuery, markup, "Tria els horaris de:");
                     break;
                 case "Grups":
                     markup.setKeyboard(menus.MenuInlineButtonsHorariGrups());
-                    enviarResposta(answer, markup, "Tria el grup:");break;
+                    enviarResposta(callbackQuery, markup, "Tria el grup:");break;
                 case "Dilluns": enviarResposta(answerPhoto, dataVars.HPDilluns); break;
                 case "Dimarts": enviarResposta(answerPhoto, dataVars.HPDimarts); break;
                 case "Dimecres":    enviarResposta(answerPhoto, dataVars.HPDimecres); break;
@@ -98,6 +101,8 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                 case "DAM2A":   enviarResposta(answerPhoto,dataVars.HDAM2A); break;
                 case "DAM2B":   enviarResposta(answerPhoto,dataVars.HDAM2B); break;
             }
+
+
 
         }
     }
@@ -122,14 +127,31 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
         }
     }
 
-    /* Envia un menu i un text com a resposta */
-    private void enviarResposta(SendMessage resp, InlineKeyboardMarkup rkm, String msg) {
+    /* Envia un menu i un text nou com a resposta */
+    private void enviarResposta2(SendMessage resp, InlineKeyboardMarkup rkm, String msg) {
         resp.setReplyMarkup(rkm);
         resp.setText(msg);
         try {
             sendMessage(resp);
         } catch (TelegramApiException e) {
             BotLogger.info(LOGTAG, e.getMessage());
+        }
+
+    }
+
+    /* Canvia el menu i el text de resposta en el mateix menu del missatge anterior*/
+    private void enviarResposta(CallbackQuery resp, InlineKeyboardMarkup rkm, String msg) {
+        EditMessageText editMarkup = new EditMessageText();
+        editMarkup.setChatId(resp.getMessage().getChatId().toString());
+        editMarkup.setInlineMessageId(resp.getInlineMessageId());
+        editMarkup.setText(msg);
+        editMarkup.enableMarkdown(true);
+        editMarkup.setMessageId(resp.getMessage().getMessageId());
+        editMarkup.setReplyMarkup(rkm);
+        try {
+            editMessageText(editMarkup);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
         }
 
     }
