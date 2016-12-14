@@ -60,6 +60,9 @@ public class menus {
         row2.add(new InlineKeyboardButton()
                 .setText("Divendres")
                 .setCallbackData("Divendres"));
+        row2.add(new InlineKeyboardButton()
+                .setText("<---")
+                .setCallbackData("<---"));
         lkbProfes.add(row);
         lkbProfes.add(row2);
 
@@ -107,10 +110,13 @@ public class menus {
         row4.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.ASIX2.toString())
                 .setCallbackData(dataVars.GRUPS.ASIX2.toString()));
+        row3.add(new InlineKeyboardButton()
+                .setText("<---")
+                .setCallbackData("<---"));
         lkbGrups.add(row);
         lkbGrups.add(row2);
-        lkbGrups.add(row3);
         lkbGrups.add(row4);
+        lkbGrups.add(row3);
 
         return lkbGrups;
 

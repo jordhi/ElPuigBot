@@ -34,7 +34,7 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
         registerDefaultAction((absSender, message) -> {
             SendMessage commandUnknownMessage = new SendMessage();
             commandUnknownMessage.setChatId(message.getChatId());
-            commandUnknownMessage.setText("La comanda '" + message.getText() + "' encara no està implementada o no és d0aquest bot. Aquí tens una ajuda " + Emoji.AMBULANCE);
+            commandUnknownMessage.setText("La comanda '" + message.getText() + "' encara no està implementada o no és d'aquest bot. Aquí tens una ajuda " + Emoji.AMBULANCE);
             try {
                 absSender.sendMessage(commandUnknownMessage);
             } catch (TelegramApiException e) {
@@ -65,7 +65,7 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
         } else if (update.hasCallbackQuery()) {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String tria = callbackQuery.getData();
-            System.out.println(tria);
+            //System.out.println(tria);
 
             SendMessage answer = new SendMessage();
             SendPhoto answerPhoto = new SendPhoto();
@@ -83,7 +83,12 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                     break;
                 case "Grups":
                     markup.setKeyboard(menus.MenuInlineButtonsHorariGrups());
-                    enviarResposta(callbackQuery, markup, "Tria el grup:");break;
+                    enviarResposta(callbackQuery, markup, "Tria el grup:");
+                    break;
+                case "<---" :
+                    markup.setKeyboard(menus.MenuInlineButtonsHoraris());
+                    enviarResposta(callbackQuery, markup, "Tria de qui vols veure horaris:");
+                    break;
                 case "Dilluns": enviarResposta(answerPhoto, dataVars.HPDilluns); break;
                 case "Dimarts": enviarResposta(answerPhoto, dataVars.HPDimarts); break;
                 case "Dimecres":    enviarResposta(answerPhoto, dataVars.HPDimecres); break;
