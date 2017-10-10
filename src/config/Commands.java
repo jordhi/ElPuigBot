@@ -17,4 +17,8 @@ public class Commands {
 
     /// List command
     public static final String listCommand = commandInitChar + "list";
+
+    /// blog command
+    public static final String blogCommand = commandInitChar + "blog";
+
 }

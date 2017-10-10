@@ -1,9 +1,11 @@
 package updateshandlers;
 
+import commands.BlogCommand;
 import commands.HelpCommand;
 import commands.HorarisCommand;
 import commands.StartCommand;
 import config.BotConfig;
+import org.telegram.telegrambots.api.methods.send.SendDocument;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import services.dataVars;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -18,6 +20,8 @@ import org.telegram.telegrambots.logging.BotLogger;
 import services.Emoji;
 import services.menus;
 
+import java.io.File;
+
 /**
  * Created by jordi on 01/12/16.
  */
@@ -27,6 +31,7 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
     public CommandsHandler() {
         register(new HorarisCommand());
         register(new StartCommand());
+        register(new BlogCommand());
         //register(new StopCommand());
         HelpCommand helpCommand = new HelpCommand(this);
         register(helpCommand);
@@ -69,8 +74,10 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
 
             SendMessage answer = new SendMessage();
             SendPhoto answerPhoto = new SendPhoto();
+            SendDocument answerDoc = new SendDocument();
             answer.setChatId(callbackQuery.getMessage().getChatId());
             answerPhoto.setChatId(callbackQuery.getMessage().getChatId());
+            answerDoc.setChatId(callbackQuery.getMessage().getChatId());
 
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
             InlineKeyboardMarkup markup2 = null;
@@ -94,17 +101,17 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                 case "Dimecres":    enviarResposta(answerPhoto, dataVars.HPDimecres); break;
                 case "Dijous":  enviarResposta(answerPhoto, dataVars.HPDijous); break;
                 case "Divendres":   enviarResposta(answerPhoto, dataVars.HPDivendres); break;
-                case "SMX1A" :  enviarResposta(answerPhoto,dataVars.HSMX1A); break;
-                case "SMX1B":   enviarResposta(answerPhoto,dataVars.HSMX1B); break;
-                case "SMC1C":   enviarResposta(answerPhoto,dataVars.HSMX1C); break;
-                case "SMX2A":   enviarResposta(answerPhoto,dataVars.HSMX2A); break;
-                case "SMX2B":   enviarResposta(answerPhoto,dataVars.HSMX2B); break;
-                case "SMX2C":   enviarResposta(answerPhoto,dataVars.HSMX2C); break;
-                case "GS1B":    enviarResposta(answerPhoto,dataVars.HGS1B); break;
-                case "GS1A":    enviarResposta(answerPhoto,dataVars.HGS1A); break;
-                case "ASIX2":   enviarResposta(answerPhoto,dataVars.HASIX2A); break;
-                case "DAM2A":   enviarResposta(answerPhoto,dataVars.HDAM2A); break;
-                case "DAM2B":   enviarResposta(answerPhoto,dataVars.HDAM2B); break;
+                case "SMX1A" :  enviarResposta(answerDoc,dataVars.HSMX1A); break;
+                case "SMX1B":   enviarResposta(answerDoc,dataVars.HSMX1B); break;
+                case "SMC1C":   enviarResposta(answerDoc,dataVars.HSMX1C); break;
+                case "SMX2A":   enviarResposta(answerDoc,dataVars.HSMX2A); break;
+                case "SMX2B":   enviarResposta(answerDoc,dataVars.HSMX2B); break;
+                case "SMX2C":   enviarResposta(answerDoc,dataVars.HSMX2C); break;
+                case "GS1B":    enviarResposta(answerDoc,dataVars.HGS1B); break;
+                case "GS1A":    enviarResposta(answerDoc,dataVars.HGS1A); break;
+                case "ASIX2":   enviarResposta(answerDoc,dataVars.HASIX2A); break;
+                case "DAM2A":   enviarResposta(answerDoc,dataVars.HDAM2A); break;
+                case "DAM2B":   enviarResposta(answerDoc,dataVars.HDAM2B); break;
             }
 
 
@@ -132,6 +139,18 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
         }
     }
 
+    /* Envia un document desat en una ubicació com a resposta */
+    private void enviarResposta(SendDocument resp, String url) {
+        //resp.setPhoto(url);
+        File f = new File(url);
+        resp.setNewDocument(f);
+        try {
+            sendDocument(resp);
+        } catch (TelegramApiException e2) {
+            e2.printStackTrace();
+        }
+    }
+
     /* Envia un menu i un text nou com a resposta */
     private void enviarResposta2(SendMessage resp, InlineKeyboardMarkup rkm, String msg) {
         resp.setReplyMarkup(rkm);
@@ -143,6 +162,8 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
         }
 
     }
+
+
 
     /* Canvia el menu i el text de resposta en el mateix menu del missatge anterior*/
     private void enviarResposta(CallbackQuery resp, InlineKeyboardMarkup rkm, String msg) {
