@@ -2,6 +2,9 @@ package services;
 
 /**
  * Created by jordi on 01/12/16.
+ * Codis de les emoticones:
+ *          http://emojis.wiki/telegram/
+ *          https://apps.timwhitlock.info/emoji/tables/unicode
  */
 public enum Emoji {
     // Emoticones group
@@ -142,6 +145,8 @@ public enum Emoji {
 
     // Others
     LEFT_RIGHT_ARROW(null, '\u2194'),
+    ARROW_UP(null,'\u2b06'),
+    ARROW_LEFTWARDS(null, '\u21a9'),
     ALARM_CLOCK(null, '\u23F0'),
     SOON_WITH_RIGHTWARDS_ARROW_ABOVE('\uD83D', '\uDD1C'),
     EARTH_GLOBE_EUROPE_AFRICA('\uD83C', '\uDF0D'),

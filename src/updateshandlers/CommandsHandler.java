@@ -27,6 +27,7 @@ import java.io.File;
  */
 public class CommandsHandler extends TelegramLongPollingCommandBot {
     private static final String LOGTAG = "COMMANDSHANDLER";
+    public static final String backMenu = Emoji.ARROW_LEFTWARDS.toString();
 
     public CommandsHandler() {
         register(new HorarisCommand());
@@ -83,38 +84,75 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
             InlineKeyboardMarkup markup2 = null;
 
 
-            switch (tria) {
-                case "Professors":
-                    markup.setKeyboard(menus.MenuInlineButtonsHorarisProfes());
-                    enviarResposta(callbackQuery, markup, "Tria els horaris de:");
-                    break;
-                case "Grups":
-                    markup.setKeyboard(menus.MenuInlineButtonsHorariGrups());
-                    enviarResposta(callbackQuery, markup, "Tria el grup:");
-                    break;
-                case "<---" :
+
+            if (tria.equals(backMenu)) {
+                markup.setKeyboard(menus.MenuInlineButtonsHoraris());
+                enviarResposta(callbackQuery, markup, "Tria de qui vols veure horaris:");
+            } else {
+                switch (tria) {
+                    case "Professors":
+                        markup.setKeyboard(menus.MenuInlineButtonsHorarisProfes());
+                        enviarResposta(callbackQuery, markup, "Tria els horaris de:");
+                        break;
+                    case "Grups":
+                        markup.setKeyboard(menus.MenuInlineButtonsHorariGrups());
+                        enviarResposta(callbackQuery, markup, "Tria el grup:");
+                        break;
+                /*case backMenu :
                     markup.setKeyboard(menus.MenuInlineButtonsHoraris());
                     enviarResposta(callbackQuery, markup, "Tria de qui vols veure horaris:");
-                    break;
-                case "Dilluns": enviarResposta(answerPhoto, dataVars.HPDilluns); break;
-                case "Dimarts": enviarResposta(answerPhoto, dataVars.HPDimarts); break;
-                case "Dimecres":    enviarResposta(answerPhoto, dataVars.HPDimecres); break;
-                case "Dijous":  enviarResposta(answerPhoto, dataVars.HPDijous); break;
-                case "Divendres":   enviarResposta(answerPhoto, dataVars.HPDivendres); break;
-                case "SMX1A" :  enviarResposta(answerDoc,dataVars.HSMX1A); break;
-                case "SMX1B":   enviarResposta(answerDoc,dataVars.HSMX1B); break;
-                case "SMC1C":   enviarResposta(answerDoc,dataVars.HSMX1C); break;
-                case "SMX2A":   enviarResposta(answerDoc,dataVars.HSMX2A); break;
-                case "SMX2B":   enviarResposta(answerDoc,dataVars.HSMX2B); break;
-                case "SMX2C":   enviarResposta(answerDoc,dataVars.HSMX2C); break;
-                case "GS1B":    enviarResposta(answerDoc,dataVars.HGS1B); break;
-                case "GS1A":    enviarResposta(answerDoc,dataVars.HGS1A); break;
-                case "ASIX2":   enviarResposta(answerDoc,dataVars.HASIX2A); break;
-                case "DAM2A":   enviarResposta(answerDoc,dataVars.HDAM2A); break;
-                case "DAM2B":   enviarResposta(answerDoc,dataVars.HDAM2B); break;
+                    break;*/
+                    case "Dilluns":
+                        enviarResposta(answerPhoto, dataVars.HPDilluns);
+                        break;
+                    case "Dimarts":
+                        enviarResposta(answerPhoto, dataVars.HPDimarts);
+                        break;
+                    case "Dimecres":
+                        enviarResposta(answerPhoto, dataVars.HPDimecres);
+                        break;
+                    case "Dijous":
+                        enviarResposta(answerPhoto, dataVars.HPDijous);
+                        break;
+                    case "Divendres":
+                        enviarResposta(answerPhoto, dataVars.HPDivendres);
+                        break;
+                    case "SMX1A":
+                        enviarResposta(answerDoc, dataVars.HSMX1A);
+                        break;
+                    case "SMX1B":
+                        enviarResposta(answerDoc, dataVars.HSMX1B);
+                        break;
+                    case "SMC1C":
+                        enviarResposta(answerDoc, dataVars.HSMX1C);
+                        break;
+                    case "SMX2A":
+                        enviarResposta(answerDoc, dataVars.HSMX2A);
+                        break;
+                    case "SMX2B":
+                        enviarResposta(answerDoc, dataVars.HSMX2B);
+                        break;
+                    case "SMX2C":
+                        enviarResposta(answerDoc, dataVars.HSMX2C);
+                        break;
+                    case "GS1B":
+                        enviarResposta(answerDoc, dataVars.HGS1B);
+                        break;
+                    case "GS1A":
+                        enviarResposta(answerDoc, dataVars.HGS1A);
+                        break;
+                    case "ASIX2":
+                        enviarResposta(answerDoc, dataVars.HASIX2A);
+                        break;
+                    case "DAM2A":
+                        enviarResposta(answerDoc, dataVars.HDAM2A);
+                        break;
+                    case "DAM2B":
+                        enviarResposta(answerDoc, dataVars.HDAM2B);
+                        break;
+                }
+
             }
-
-
 
         }
     }

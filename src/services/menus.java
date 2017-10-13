@@ -61,8 +61,8 @@ public class menus {
                 .setText("Divendres")
                 .setCallbackData("Divendres"));
         row2.add(new InlineKeyboardButton()
-                .setText("<---")
-                .setCallbackData("<---"));
+                .setText(Emoji.ARROW_LEFTWARDS.toString())
+                .setCallbackData(Emoji.ARROW_LEFTWARDS.toString()));
         lkbProfes.add(row);
         lkbProfes.add(row2);
 
@@ -111,8 +111,8 @@ public class menus {
                 .setText(dataVars.GRUPS.ASIX2.toString())
                 .setCallbackData(dataVars.GRUPS.ASIX2.toString()));
         row3.add(new InlineKeyboardButton()
-                .setText("<---")
-                .setCallbackData("<---"));
+                .setText(Emoji.ARROW_LEFTWARDS.toString())
+                .setCallbackData(Emoji.ARROW_LEFTWARDS.toString()));
         lkbGrups.add(row);
         lkbGrups.add(row2);
         lkbGrups.add(row4);
