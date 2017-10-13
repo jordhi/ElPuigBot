@@ -1,7 +1,6 @@
 package services;
 
 /**
- * Created by jordi on 01/12/16.
  * Codis de les emoticones:
  *          http://emojis.wiki/telegram/
  *          https://apps.timwhitlock.info/emoji/tables/unicode
