@@ -103,19 +103,19 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                     enviarResposta(callbackQuery, markup, "Tria de qui vols veure horaris:");
                     break;*/
                     case "Dilluns":
-                        enviarResposta(answerPhoto, dataVars.HPDilluns);
+                        enviarResposta(answerDoc, dataVars.HPDilluns);
                         break;
                     case "Dimarts":
-                        enviarResposta(answerPhoto, dataVars.HPDimarts);
+                        enviarResposta(answerDoc, dataVars.HPDimarts);
                         break;
                     case "Dimecres":
-                        enviarResposta(answerPhoto, dataVars.HPDimecres);
+                        enviarResposta(answerDoc, dataVars.HPDimecres);
                         break;
                     case "Dijous":
-                        enviarResposta(answerPhoto, dataVars.HPDijous);
+                        enviarResposta(answerDoc, dataVars.HPDijous);
                         break;
                     case "Divendres":
-                        enviarResposta(answerPhoto, dataVars.HPDivendres);
+                        enviarResposta(answerDoc, dataVars.HPDivendres);
                         break;
                     case "SMX1A":
                         enviarResposta(answerDoc, dataVars.HSMX1A);
@@ -123,7 +123,7 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                     case "SMX1B":
                         enviarResposta(answerDoc, dataVars.HSMX1B);
                         break;
-                    case "SMC1C":
+                    case "SMX1C":
                         enviarResposta(answerDoc, dataVars.HSMX1C);
                         break;
                     case "SMX2A":

@@ -24,7 +24,7 @@ public class BlogCommand  extends BotCommand {
         StringBuilder messageBuilder = new StringBuilder();
         String userName = user.getFirstName();
 
-        messageBuilder.append("http://blog.elpuig.xeill.net/?p=1765");
+        messageBuilder.append("http://blog.elpuig.xeill.net");
 
         //InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
         //markup.setKeyboard(menus.MenuInlineButtonsHoraris());
