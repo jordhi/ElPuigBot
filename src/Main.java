@@ -1,6 +1,8 @@
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.generics.LongPollingBot;
+import org.telegram.telegrambots.generics.WebhookBot;
 import org.telegram.telegrambots.logging.BotLogger;
 import org.telegram.telegrambots.logging.BotsFileHandler;
 import updateshandlers.CommandsHandler;
