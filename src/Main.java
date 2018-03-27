@@ -31,6 +31,8 @@ public class Main {
             ApiContextInitializer.init();
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
             try {
+                //TODO cal fer el registerBot de cada un de les comandes
+                //TODO i no a través del CommandsHandler
                 telegramBotsApi.registerBot((LongPollingBot) new CommandsHandler());
             }catch(TelegramApiException e) {
                 BotLogger.error(LOGTAG,e);
