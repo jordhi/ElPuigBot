@@ -31,7 +31,7 @@ public class Main {
             ApiContextInitializer.init();
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
             try {
-                telegramBotsApi.registerBot(new CommandsHandler());
+                telegramBotsApi.registerBot((LongPollingBot) new CommandsHandler());
             }catch(TelegramApiException e) {
                 BotLogger.error(LOGTAG,e);
             }
