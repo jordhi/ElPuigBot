@@ -135,10 +135,10 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                     case "SMX2C":
                         enviarResposta(answerDoc, dataVars.HSMX2C);
                         break;
-                    case "GS1B":
+                    case "ASIX1":
                         enviarResposta(answerDoc, dataVars.HGS1B);
                         break;
-                    case "GS1A":
+                    case "DAM1":
                         enviarResposta(answerDoc, dataVars.HGS1A);
                         break;
                     case "ASIX2":

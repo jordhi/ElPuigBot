@@ -28,6 +28,6 @@ public class dataVars {
     public static final String HPDivendres = ROOTDOCS + "divendres.pdf";
 
     public enum GRUPS {
-        SMX1A,SMX1B,SMX1C,SMX2A,SMX2B,SMX2C,GS1A,GS1B,DAM2A,DAM2B,ASIX2
+        SMX1A,SMX1B,SMX1C,SMX2A,SMX2B,SMX2C,ASIX1,DAM1,DAM2A,DAM2B,ASIX2
     }
 }

@@ -96,11 +96,11 @@ public class menus {
                 .setText(dataVars.GRUPS.SMX2C.toString())
                 .setCallbackData(dataVars.GRUPS.SMX1C.toString()));
         row3.add(new InlineKeyboardButton()
-                .setText(dataVars.GRUPS.GS1A.toString())
-                .setCallbackData(dataVars.GRUPS.GS1A.toString()));
+                .setText(dataVars.GRUPS.ASIX1.toString())
+                .setCallbackData(dataVars.GRUPS.ASIX1.toString()));
         row3.add(new InlineKeyboardButton()
-                .setText(dataVars.GRUPS.GS1B.toString())
-                .setCallbackData(dataVars.GRUPS.GS1B.toString()));
+                .setText(dataVars.GRUPS.DAM1.toString())
+                .setCallbackData(dataVars.GRUPS.DAM1.toString()));
         row4.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.DAM2A.toString())
                 .setCallbackData(dataVars.GRUPS.DAM2A.toString()));
