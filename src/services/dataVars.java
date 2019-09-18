@@ -6,19 +6,20 @@ package services;
 public class dataVars {
     //root
     public static final String ROOTDOCS = "//home/telegrambot/ElPuigBot/docs/";
+    //public static final String ROOTDOCS = "//home/jordi/Documents/ElPuigBot/docs/";
 
     //Horaris Grups
-    public static final String HSMX1A = ROOTDOCS + "Horari1SMXA1819.pdf";
-    public static final String HSMX1B = ROOTDOCS + "Horari1SMXB1819.pdf";
-    public static final String HSMX1C = ROOTDOCS + "Horari1SMXC1819.pdf";
-    public static final String HSMX2A = ROOTDOCS + "Horari2SMXA1819.pdf";
-    public static final String HSMX2B = ROOTDOCS + "Horari2SMXB1819.pdf";
-    public static final String HSMX2C = ROOTDOCS + "Horari2SMXC1819.pdf";
-    public static final String HGS1A = ROOTDOCS + "Horari1ASIX1819.pdf";
-    public static final String HGS1B = ROOTDOCS + "Horari1DAM1819.pdf";
-    public static final String HDAM2A = ROOTDOCS + "Horari2DAMA1819.pdf";
-    public static final String HDAM2B = ROOTDOCS + "Horari2DAMB1819.pdf";
-    public static final String HASIX2A = ROOTDOCS + "Horari2ASIX1819.pdf";
+    public static final String HSMX1A = ROOTDOCS + "Horari1SMXA.pdf";
+    public static final String HSMX1B = ROOTDOCS + "Horari1SMXB.pdf";
+    public static final String HSMX1C = ROOTDOCS + "Horari1SMXC.pdf";
+    public static final String HSMX2A = ROOTDOCS + "Horari2SMXA.pdf";
+    public static final String HSMX2B = ROOTDOCS + "Horari2SMXB.pdf";
+    public static final String HSMX2C = ROOTDOCS + "Horari2SMXC.pdf";
+    public static final String HGS1A = ROOTDOCS + "Horari1ASIX.pdf";
+    public static final String HGS1B = ROOTDOCS + "Horari1DAM.pdf";
+    public static final String HDAM2A = ROOTDOCS + "Horari2DAMA.pdf";
+    public static final String HDAM2B = ROOTDOCS + "Horari2DAMB.pdf";
+    public static final String HASIX2A = ROOTDOCS + "Horari2ASIX.pdf";
 
     //Horaris Professors
     public static final String HPDilluns = ROOTDOCS + "dilluns.pdf";
