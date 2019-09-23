@@ -88,13 +88,13 @@ public class menus {
                 .setCallbackData(dataVars.GRUPS.SMX1C.toString()));
         row2.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.SMX2A.toString())
-                .setCallbackData(dataVars.GRUPS.SMX1A.toString()));
+                .setCallbackData(dataVars.GRUPS.SMX2A.toString()));
         row2.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.SMX2B.toString())
-                .setCallbackData(dataVars.GRUPS.SMX1B.toString()));
+                .setCallbackData(dataVars.GRUPS.SMX2B.toString()));
         row2.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.SMX2C.toString())
-                .setCallbackData(dataVars.GRUPS.SMX1C.toString()));
+                .setCallbackData(dataVars.GRUPS.SMX2C.toString()));
         row3.add(new InlineKeyboardButton()
                 .setText(dataVars.GRUPS.ASIX1.toString())
                 .setCallbackData(dataVars.GRUPS.ASIX1.toString()));

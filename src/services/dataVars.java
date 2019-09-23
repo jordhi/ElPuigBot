@@ -15,8 +15,8 @@ public class dataVars {
     public static final String HSMX2A = ROOTDOCS + "Horari2SMXA.pdf";
     public static final String HSMX2B = ROOTDOCS + "Horari2SMXB.pdf";
     public static final String HSMX2C = ROOTDOCS + "Horari2SMXC.pdf";
-    public static final String HGS1A = ROOTDOCS + "Horari1ASIX.pdf";
-    public static final String HGS1B = ROOTDOCS + "Horari1DAM.pdf";
+    public static final String HGS1ASIX = ROOTDOCS + "Horari1ASIX.pdf";
+    public static final String HGS1DAM = ROOTDOCS + "Horari1DAM.pdf";
     public static final String HDAM2A = ROOTDOCS + "Horari2DAMA.pdf";
     public static final String HDAM2B = ROOTDOCS + "Horari2DAMB.pdf";
     public static final String HASIX2A = ROOTDOCS + "Horari2ASIX.pdf";

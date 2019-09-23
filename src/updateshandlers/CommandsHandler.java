@@ -60,7 +60,8 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
            if (message.hasText()) {
                 SendMessage echoMessage = new SendMessage();
                 echoMessage.setChatId(message.getChatId());
-                echoMessage.setText("Hey heres your message:\n" + message.getText());
+                echoMessage.setText("Hola sóc un bot sense IA de moment només obeeixo ordres:\n" + message.getText()
+                    + " i això no és cap ordre.\nEscriu /help");
 
                 try {
                     sendMessage(echoMessage);
@@ -136,10 +137,10 @@ public class CommandsHandler extends TelegramLongPollingCommandBot {
                         enviarResposta(answerDoc, dataVars.HSMX2C);
                         break;
                     case "ASIX1":
-                        enviarResposta(answerDoc, dataVars.HGS1B);
+                        enviarResposta(answerDoc, dataVars.HGS1ASIX);
                         break;
                     case "DAM1":
-                        enviarResposta(answerDoc, dataVars.HGS1A);
+                        enviarResposta(answerDoc, dataVars.HGS1DAM);
                         break;
                     case "ASIX2":
                         enviarResposta(answerDoc, dataVars.HASIX2A);
